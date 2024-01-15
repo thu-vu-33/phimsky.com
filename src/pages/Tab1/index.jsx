@@ -1,10 +1,36 @@
 import React from "react";
 
+import { ToastContainer, toast } from "react-toastify";
+
+import { getUsersFromReqresInApi } from "service/api";
+
 import { Button, Img, Input, Text } from "components";
 import FilmItem1 from "components/FilmItem1";
 import Header1 from "components/Header1";
 
+import "react-toastify/dist/ReactToastify.css";
+
 const Tab1Page = () => {
+  const [usersData, setUsersData] = React.useState();
+  React.useEffect(() => {
+    callApi();
+  }, []);
+
+  function callApi() {
+    const req = {};
+
+    getUsersFromReqresInApi(req)
+      .then((res) => {
+        setUsersData(res?.data);
+
+        toast.success("OK");
+      })
+      .catch((err) => {
+        console.error(err);
+        toast.error("FAIL");
+      });
+  }
+
   return (
     <>
       <div className="bg-white-A700 flex flex-col font-roboto items-center justify-start mx-auto p-2 w-full">
@@ -126,187 +152,18 @@ const Tab1Page = () => {
           </div>
           <div className="flex flex-col gap-[23px] items-center justify-start mt-3 w-[73%] md:w-full">
             <div className="gap-4 md:gap-5 grid sm:grid-cols-1 md:grid-cols-3 grid-cols-5 justify-center min-h-[auto] w-full">
-              <FilmItem1 className="flex flex-1 flex-col items-start justify-start w-full" />
-              <FilmItem1
-                className="flex flex-1 flex-col items-start justify-start w-full"
-                vietnames="Thăng cấp một mình"
-                english="Solo Leveling"
-              />
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-2 text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Chàng quỷ của tôi
-                </Text>
-                <Text
-                  className="mt-[5px] text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  My Demon
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-2 text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Chào mừng đến Samdal-ri
-                </Text>
-                <Text
-                  className="mt-[3px] text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  Welcome to Samdal-ri
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-2 text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Những Ngày Hoàn Hảo
-                </Text>
-                <Text
-                  className="mt-1.5 text-[15px] text-gray-600"
-                  size="txtRobotoRegular15"
-                >
-                  Perfect Days
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-[9px] text-[15px] text-gray-300"
-                  size="txtRobotoRegular15Gray300"
-                >
-                  Chệch Quỹ Đạo / Ly Tâm Lực
-                </Text>
-                <Text
-                  className="mt-[3px] text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  Derailment
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-3.5 text-[15px] text-gray-300"
-                  size="txtRobotoRegular15Gray300"
-                >
-                  Chệch Quỹ Đạo / Ly Tâm Lực
-                </Text>
-                <Text
-                  className="text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  Derailment
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-[9px] text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Điệp Viên Tiger 3
-                </Text>
-                <Text
-                  className="mt-[5px] text-[15px] text-gray-600"
-                  size="txtRobotoRegular15"
-                >
-                  Tiger 3
-                </Text>
-              </div>
-              <FilmItem1
-                className="flex flex-1 flex-col items-start justify-start w-full"
-                vietnames="Echo"
-                english="Echo"
-              />
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-2 text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Monarch: Thế giới quái thú
-                </Text>
-                <Text
-                  className="mt-1.5 text-[15px] text-gray-600"
-                  size="txtRobotoRegular15"
-                >
-                  Monarch: Legacy of Monsters
-                </Text>
-              </div>
-              <FilmItem1
-                className="flex flex-1 flex-col items-start justify-start w-full"
-                vietnames="Reacher"
-                english="Reacher"
-              />
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="ml-0.5 md:ml-[0] mt-[9px] text-[15px] text-gray-300"
-                  size="txtRobotoRegular15Gray300"
-                >
-                  Cuộc Chiến Không Gian
-                </Text>
-                <Text
-                  className="ml-0.5 md:ml-[0] mt-1 text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  For All Mankind
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col gap-[9px] items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Lift: Vụ trộm trên không
-                </Text>
-                <Text
-                  className="md:ml-[0] ml-[33px] text-[15px] text-gray-600"
-                  size="txtRobotoRegular15"
-                >
-                  Lift
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-[7px] text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  Áp Giải Kẻ Khủng Bố
-                </Text>
-                <Text
-                  className="mt-1 text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  One More Shot
-                </Text>
-              </div>
-              <div className="flex flex-1 flex-col items-start justify-start w-full">
-                <div className="bg-blue_gray-100 h-96 w-full"></div>
-                <Text
-                  className="mt-[9px] text-base text-gray-300"
-                  size="txtRobotoRegular16Gray300"
-                >
-                  Lạc Du Nguyên
-                </Text>
-                <Text
-                  className="mt-[3px] text-base text-gray-600"
-                  size="txtRobotoRegular16Gray600"
-                >
-                  Wonderland of Love
-                </Text>
-              </div>
+              {usersData?.data?.map((usersElement, index) => {
+                return (
+                  <React.Fragment key={`usersElement${index}`}>
+                    <FilmItem1
+                      className="flex flex-1 flex-col items-start justify-start w-full"
+                      vietnames={usersElement?.["first_name"]}
+                      english={usersElement?.["last_name"]}
+                      image={usersElement?.avatar}
+                    />
+                  </React.Fragment>
+                );
+              })}
             </div>
             <div className="flex sm:flex-col flex-row md:gap-10 items-center justify-between w-full">
               <div className="flex sm:flex-1 flex-row items-start justify-between w-[24%] sm:w-full">
@@ -351,6 +208,7 @@ const Tab1Page = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </>
   );
 };
