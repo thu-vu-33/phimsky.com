@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MPD xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="urn:mpeg:dash:schema:mpd:2011" xsi:schemaLocation="urn:mpeg:DASH:schema:MPD:2011 DASH-MPD.xsd" id="dash" type="dynamic" publishTime="2024-01-19T06:21:41Z" minimumUpdatePeriod="PT2.8S" availabilityStartTime="2023-12-28T03:04:20Z" minBufferTime="PT9S" suggestedPresentationDelay="PT9S" timeShiftBufferDepth="PT80S" profiles="urn:mpeg:dash:profile:isoff-live:2011">
+    <Period start="PT0S" id="1703732660">
+        <AdaptationSet mimeType="video/mp4" segmentAlignment="true" startWithSAP="1" subsegmentAlignment="true" subsegmentStartsWithSAP="1">
+            <Representation id="tracks-v5" width="1280" height="720" sar="1:1" frameRate="25" bandwidth="996000" codecs="hvc1.1.4.L93">
+                <SegmentTemplate timescale="1000" media="$RepresentationID$/seg-1703732660-$Number$.m4v?t=$Time$" initialization="$RepresentationID$/init.m4v" startNumber="28340">
+                    <SegmentTimeline>
+                        <S t="1912561863" d="4000" r="19"/>
+                    </SegmentTimeline>
+                </SegmentTemplate>
+            </Representation>
+            <Representation id="tracks-v6" width="854" height="480" sar="1:1" frameRate="25" bandwidth="496000" codecs="hvc1.1.4.L90">
+                <SegmentTemplate timescale="1000" media="$RepresentationID$/seg-1703732660-$Number$.m4v?t=$Time$" initialization="$RepresentationID$/init.m4v" startNumber="28340">
+                    <SegmentTimeline>
+                        <S t="1912561863" d="4000" r="19"/>
+                    </SegmentTimeline>
+                </SegmentTemplate>
+            </Representation>
+        </AdaptationSet>
+        <AdaptationSet mimeType="audio/mp4" segmentAlignment="true" startWithSAP="1">
+            <Representation id="tracks-a1" bandwidth="99000" audioSamplingRate="48000" codecs="mp4a.40.2">
+                <SegmentTemplate timescale="1000" media="$RepresentationID$/seg-1703732660-$Number$.m4v?t=$Time$" initialization="$RepresentationID$/init.m4v" startNumber="28340">
+                    <SegmentTimeline>
+                        <S t="1912561863" d="4000" r="19"/>
+                    </SegmentTimeline>
+                </SegmentTemplate>
+            </Representation>
+        </AdaptationSet>
+    </Period>
+    <UTCTiming schemeIdUri="urn:mpeg:dash:utc:direct:2014" value="2024-01-19T06:21:41Z"/>
+</MPD>
