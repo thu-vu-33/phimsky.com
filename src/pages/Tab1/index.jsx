@@ -159,7 +159,7 @@ const Tab1Page = () => {
                       className="flex flex-1 flex-col items-start justify-start w-full"
                       vietnames={usersElement?.["first_name"]}
                       english={usersElement?.["last_name"]}
-                      image={usersElement?.avatar}
+                      image={usersElement?.["avatar"]}
                     />
                   </React.Fragment>
                 );

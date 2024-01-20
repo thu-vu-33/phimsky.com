@@ -1,8 +1,11 @@
 import React from "react";
+import { useLocation } from "react-router-dom";
 
 import { Button, Img, Text } from "components";
 
 const MediaPage = () => {
+  let location = useLocation();
+  console.log(location.state.name);
   return (
     <>
       <div className="bg-white-A700 flex flex-col justify-start mx-auto pr-[17px] py-[17px] w-full">
