@@ -1,6 +1,7 @@
 import React from "react";
 
 import { Button, Img, Text } from "components";
+import Video from "components/Video";
 
 const MediaPage = () => {
   return (
@@ -12,7 +13,7 @@ const MediaPage = () => {
               className="mb-[-7.3px] ml-3 sm:text-[31px] md:text-[33px] text-[35px] text-black-900 z-[1]"
               size="txtDancingScriptRegular35"
             >
-              PhimSky
+              Phim
             </Text>
             <div className="flex sm:flex-col flex-row font-roboto sm:gap-5 items-start justify-start mb-[undefinedpx] ml-[153px] mt-1.5 w-[23%] z-[1]">
               <Img
@@ -51,11 +52,7 @@ const MediaPage = () => {
                 Phim Mới
               </Text>
             </div>
-            <div className="bg-black-900 flex flex-col items-start justify-end mt-auto mx-auto md:pr-10 sm:pr-5 pr-[790px] pt-[790px] w-full">
-              <div className="bg-white-A700_4c flex flex-col items-start justify-start w-[1%] md:w-full">
-                <div className="bg-red-800 h-[3px] w-[3px]"></div>
-              </div>
-            </div>
+            <Video />
           </div>
           <div className="bg-black-900_4c h-[45px] w-full"></div>
         </div>
